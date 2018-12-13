@@ -18,7 +18,7 @@ func Connect() int {
 	appName := C.CString("Fooapp")
 	defer C.free(unsafe.Pointer(appName))
 	descStr := C.CString("Music")
-	defer C.free(unsafe.Pointer(descStr))
+	defer C.pa_simple_free(pulseSimple)
 
 	pulseSimple = C.pa_simple_new(
 		nil,
